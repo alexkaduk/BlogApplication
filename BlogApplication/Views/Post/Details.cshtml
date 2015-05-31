@@ -1,0 +1,43 @@
+﻿@model BlogApplication.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Post</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Message)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Message)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserId)
+    </div>
+</fieldset>
+@Html.Action("_GetForPost", "Comments", new { id = Model.PostId})
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.PostId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+підключить даний скирпт лише на Details
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

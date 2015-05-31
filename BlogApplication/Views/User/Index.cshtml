@@ -1,0 +1,18 @@
+﻿// в @Model посилання на дані. які переслав контролер!
+// стрічка нижче лише для типізованою вью (якщо ViewBag - цього не треба)
+@model List<BlogApplication.Models.User>
+
+@{
+    ViewBag.Title = "User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>User</h2>
+
+<ul>
+    @foreach (var user in Model)
+    { 
+        <li>@Html.DisplayFor(x => user.UserName)</li>
+    }
+</ul>
+@Html.ActionLink("Create", "Create", "User")

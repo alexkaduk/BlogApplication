@@ -1,0 +1,16 @@
+﻿@model System.Collections.Generic.List<BlogApplication.Models.Comment>
+
+<div id="comments">
+    <ul>
+        @foreach (var comment in Model)
+        { 
+            <li>@comment.Text (@comment.CreateAt)</li>
+        }
+    </ul>
+    @*@using (Html.BeginForm("_SubmitComment", "Comments", FormMethod.Post)) *@
+    @using (Ajax.BeginForm("_SubmitComment", "Comments", new AjaxOptions {UpdateTargetId = "comments" }))
+    { 
+        @Html.AntiForgeryToken()
+        @Html.Action("_CommentForm", "Comments", new { id = ViewBag.PostId })
+    }
+</div>

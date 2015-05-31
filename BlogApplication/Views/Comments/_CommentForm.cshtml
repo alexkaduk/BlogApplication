@@ -1,0 +1,10 @@
+﻿@model BlogApplication.Models.Comment
+
+@Html.HiddenFor(x => x.PostId)
+
+<div>
+    @Html.LabelFor(x => x.Text)
+    @Html.EditorFor(x => x.Text)
+</div>
+
+<input type="submit" value="Add comment">
