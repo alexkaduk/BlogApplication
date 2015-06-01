@@ -1,0 +1,58 @@
+﻿@model TaskApplication.Models.Issue
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Issue</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IssueName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IssueName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IssueDescription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IssueDescription)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IssueCreateDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IssueCreateDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IssueUpdateDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IssueUpdateDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StatusId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StatusId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CategoryId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CategoryId)
+    </div>
+</fieldset>
+@Html.Action("_GetSubTasks", "SubTask", new { issueId = Model.IssueId})
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IssueId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
