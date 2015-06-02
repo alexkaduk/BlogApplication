@@ -6,7 +6,7 @@ using System.Web;
 
 namespace TaskApplication.Models
 {
-    public class TaskContexInitializer : DropCreateDatabaseIfModelChanges<TaskContex>
+    public class TaskContexInitializer : DropCreateDatabaseAlways<TaskContex>
     {
         protected override void Seed(TaskContex contex)
         {

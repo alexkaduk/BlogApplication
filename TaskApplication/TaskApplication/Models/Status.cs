@@ -9,8 +9,5 @@ namespace TaskApplication.Models
     {
         public int StatusId { get; set; }
         public string StatusName { get; set; }
-
-        public virtual int IssueId { get; set; }
-        public virtual int SubTaskId { get; set; }
     }
 }

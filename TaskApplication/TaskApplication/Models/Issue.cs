@@ -27,11 +27,13 @@ namespace TaskApplication.Models
 
         [Required]
         [Display(Name = "Status")]
-        public virtual int StatusId { get; set; }
+        public int StatusId { get; set; }
+        public virtual Status Status { get; set; }
 
         [Required]
         [Display(Name = "Category")]
-        public virtual int CategoryId { get; set; }
+        public int CategoryId { get; set; }
+        public virtual Category Category { get; set; }
 
         public virtual List<SubTask> SubTasks { get; set; }
     }
